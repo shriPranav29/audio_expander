@@ -1,3 +1,4 @@
+import 'package:audio_expander/components/rotary_knob.dart';
 import 'package:flutter/material.dart';
 
 class PlayerScreen extends StatefulWidget {
@@ -18,6 +19,47 @@ class _PlayerScreenState extends State<PlayerScreen> {
       height: sHeight ,
       width: sWidth ,
       color: Colors.deepOrange,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+           CenterControllerUnit() , 
+           RotaryKnob()  
+        ],
+      )
     );
+  }
+
+  Widget CenterControllerUnit() {
+    return SizedBox(
+            height: 350,
+            width: 350,
+            child: Stack(
+              children: [
+                Center(
+                  child: Container(
+                    height: 300,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: Colors.black , 
+                      shape: BoxShape.circle
+                    ),
+                    
+                  ),
+                ), 
+            
+                Center(
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: Colors.deepOrange , 
+                        shape: BoxShape.circle
+                      ),
+                    ),
+                  )
+              ],
+            ),
+      );
   }
 }
